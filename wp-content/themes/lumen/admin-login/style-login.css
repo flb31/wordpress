@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:700,400,300,600,200,200italic');
+
+body,html{ 
+  background-image: url('./img/LumenDigitalTextura.png'); 
+  background-repeat: repeat; 
+  font-family: "Titillium Web",sans-serif;
+}
+
+#login h1 a, .login h1 a {
+  background-image: url('./img/LogoCliente.png');
+  width: 172px;
+  height: 115px;
+  background-size: contain;
+}
+
+
+.login h1 a{ margin-bottom: 0; }
+
+.login #backtoblog a, .login #nav a{
+  color: #FFF;
+}
+
+.login #backtoblog a:hover, .login #nav a:hover{
+  color: #FFF;
+}
+
+.login form{ margin-bottom: 15px; }
+
+p#nav, p#backtoblog { display: inline; margin: 0 !important; padding: 0 !important; }
+p#backtoblog{ margin-left: 137px !important; }
+
+.copyright{ display: block; margin:  0 auto; width: 50%; text-align: center; margin-top: 15px; }
