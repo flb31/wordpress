@@ -15,7 +15,7 @@ class Conf {
         'singular_label' => 'Demo',
         'description' => 'Demo Lumen',
         'menu_position' => 3,
-        'icon' => 'dashicons-admin-users',
+        'icon' => 'dashicons-admin-users', //Search icon in: https://developer.wordpress.org/resource/dashicons/
         'text_domain' => self::TEXT_DOMAIN,
       ),
   );
