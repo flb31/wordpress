@@ -3,6 +3,7 @@
 class Conf {
   const TEXT_DOMAIN = 'lumen';
   const LIMIT_POSTS = 10;
+  const PREFIX = 'LD';
   
   //Post type
   const POSTYPE_DEMO = 'demo';
