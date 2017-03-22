@@ -3,12 +3,14 @@
 class PostType {
   
   var $post_type;
+  var $taxonomy;
   
-  function __construct($post_type) {
+  function __construct($post_type, $taxonomy) {
     $this->post_type = $post_type;
-    add_action( 'init', array( $this, 'create_posttype') );
-    add_action( 'init', array( $this, 'custom_post_type'), 0 );
-    add_action( 'init', array( $this, 'build_taxonomies'), 0 );
+    $this->taxonomy = $taxonomy;
+
+    add_action( 'init', array( $this, 'create_posttype'));
+    add_action( 'init', array( $this, 'build_taxonomies'));
     add_action('admin_init', array( $this, 'customize_meta_boxes') );
     
     $file_name = dirname(__FILE__) . '/meta-box/' . $this->post_type . '.php';
@@ -67,53 +69,8 @@ class PostType {
   }
 
 
-  /*
-  * Creating a function to create the Custom Post Type
-  */
-
-  function custom_post_type() {
-
-    $setting = $this->get_setting_post_type();
-    $plural_label = $setting['plural_label']; 
-    $description = $setting['description'];
-    $menu_position = $setting['menu_position'];
-    $text_domain = $setting['text_domain'];
-
-  // Set other options for Custom Post Type
-
-  $args = array(
-    'label'               => __( $plural_label, $text_domain ),
-    'description'         => __( $description, $text_domain ),
-    // Features in Post Editor
-    'supports'            => array( 'title', 'author', 'comments'  ),
-    // Taxonomies or custom taxonomy.
-    //'taxonomies'          => array( 'category' ),
-    /* A hierarchical CPT is like Pages and can have
-    * Parent and child items. A non-hierarchical CPT
-    * is like Posts.
-    */
-    'hierarchical'        => false,
-    'public'              => true,
-    'show_ui'             => true,
-    'show_in_menu'        => true,
-    'show_in_nav_menus'   => true,
-    'show_in_admin_bar'   => true,
-    'menu_position'       => $menu_position,
-    'can_export'          => true,
-    'has_archive'         => true,
-    'exclude_from_search' => false,
-    'publicly_queryable'  => true,
-    'capability_type'     => 'post',
-  );
-
-    // Registering Custom Post Type
-    register_post_type( $this->post_type, $args );
-
-  }
-
-
   function build_taxonomies() {
-    register_taxonomy( $this->post_type, $this->post_type, array( 'hierarchical' => true, 'label' => 'Categorías', 'query_var' => true, 'rewrite' => true ) );
+    register_taxonomy( $this->taxonomy, $this->post_type, array( 'hierarchical' => true, 'label' => 'Categorías', 'query_var' => true, 'rewrite' => true ) );
 
   }
 }

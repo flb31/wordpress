@@ -10,9 +10,9 @@ include 'admin-colors/admin-colors.php';
 
 
 function load_post_type() {
-  $keys = array_keys(Conf::$POST_TYPES);
-  foreach($keys as $post_type) {
-    new PostType($post_type);
+  $types = Conf::$POST_TYPES;
+  foreach($types as $post_type => $item) {
+    new PostType($post_type, $item['taxonomy']);
   }
 }
 

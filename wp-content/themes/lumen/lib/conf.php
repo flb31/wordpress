@@ -2,12 +2,15 @@
 
 class Conf {
   const TEXT_DOMAIN = 'lumen';
-  const POSTYPE_DEMO = 'demo';
   const LIMIT_POSTS = 10;
+  
+  //Post type
+  const POSTYPE_DEMO = 'demo';
   const PREFIX_DEMO = self::POSTYPE_DEMO . '_';
 
   public static $POST_TYPES = array(
     self::POSTYPE_DEMO => array(
+        'taxonomy' => self::POSTYPE_DEMO . 's',
         'plural_label' => 'Demos',
         'singular_label' => 'Demo',
         'description' => 'Demo Lumen',
