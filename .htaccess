@@ -8,3 +8,16 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
 # END WordPress
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|xml|txt|css|svg|png|jpg|jpeg|json)$">
+    Header set Cache-Control "max-age=604800, public, must-revalidate"
+    Header unset Last-Modified
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+    <filesMatch "\.(html|htm|php|js|xml|txt|css|svg|png|jpg|jpeg|json)$">
+        SetOutputFilter DEFLATE
+    </filesMatch>
+</IfModule>
