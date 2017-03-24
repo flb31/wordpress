@@ -153,7 +153,7 @@
   }
 
   function LD_get_template_part($data, $slug, $name) {
-    foreach($data as $key, $val) {
+    foreach($data as $key => $val) {
       set_query_var( Conf::PREFIX . $key, $val );
     }
     get_template_part($slug, $name);
