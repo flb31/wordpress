@@ -14,3 +14,4 @@ add_action('init', 'load_post_type', 0);
 add_action( Conf::PREFIX . 'head', 'meta_opengraph' );
 add_action( Conf::PREFIX . 'head', 'meta_noindex' );
 add_action('get_header', 'get_start_page');
+add_action('get_header', 'minify_html', 999);
