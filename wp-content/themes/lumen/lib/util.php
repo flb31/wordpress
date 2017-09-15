@@ -17,21 +17,30 @@
     return $args;
   }
 
-  function title_section(){
+  function title_section() {
     
-    if(strlen( the_title() ) > 0){
-      return the_title();
-    }else{
-      $category = get_category( get_query_var('cat') );
-      return $category->name;
+    ob_start();
+      single_cat_title();
+      $cat_title = ob_get_contents();
+    ob_end_clean();
+
+    if(strlen( $cat_title ) > 0) {
+      return $cat_title;
+    } else {
+      return get_the_title();
     }
   }
 
-  function get_the_description(){
+  function get_title_page($title) {
+    return $title . ' :: ' . get_bloginfo('name');
+  }
+
+  function get_the_description() {
     
     $have_post = have_posts();
     the_post();
-    if($have_post && (get_post_type() === 'post' || in_array(the_slug(false), get_static_page() ) ) ){
+    $post_type = array('post', 'page');
+    if($have_post && (in_array(get_post_type(), $post_type) || in_array(the_slug(false), get_static_page() ) ) ){
       $description = get_the_content();
     }else{
       $cat = get_query_var('cat');
@@ -46,7 +55,7 @@
     return verify_description($description);
   }
 
-  function get_static_page(){
+  function get_static_page() {
     return array();
   }
 
@@ -178,4 +187,18 @@
 
   function meta_noindex() {
     LD_get_template_part('partials/noindex');
+  }
+
+  function get_start_page() {
+    $description = get_the_description();
+    $title_section = title_section();
+    $title = get_title_page($title_section);
+    
+    $data = array(
+      'description' => $description,
+      'title_section' => $title_section,
+      'title' => $title,
+    );
+    
+    process_set_var($data);
   }
