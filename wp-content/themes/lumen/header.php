@@ -8,6 +8,7 @@
     <meta name="theme-color" content="">
     <meta name="msapplication-navbutton-color" content="">
     <meta name="apple-mobile-web-app-status-bar-style" content="">
+    <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri() ?>/assets/css/main.css" media="all" />
     <?php do_action( Conf::PREFIX . 'head' ); ?>
   </head>
   <body>

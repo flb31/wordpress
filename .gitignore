@@ -3,3 +3,12 @@ wp/
 composer.lock
 .env
 wp-content/uploads/
+
+#misc
+/.sass-cache
+npm-debug.log
+.DS_Store
+.gulp/
+
+#dependences
+/node_modules

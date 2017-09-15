@@ -1,0 +1,21 @@
+{
+  "name": "bower-frontend",
+  "description": "",
+  "repository": "",
+  "authors": [
+    "Fabian Luna"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "components-font-awesome": "^4.5.0"
+  }
+}

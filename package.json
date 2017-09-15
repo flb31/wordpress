@@ -1,0 +1,24 @@
+{
+  "name": "lumen-wordpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.php",
+  "scripts": {
+    "postinstall": "bower install && gulp"
+  },
+  "author": "Fabian Luna",
+  "license": "",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
+    "jshint": "^2.9.2"
+  },
+  "dependencies": {
+    "gulp-livereload": "^3.8.1"
+  }
+}
