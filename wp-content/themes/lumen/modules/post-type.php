@@ -18,7 +18,7 @@ class PostType {
       include_once $file_name;
     }
     
-    $function_name = 'meta_boxes_' . $this->post_type;
+    $function_name = 'meta_boxes_' . str_replace('-' , '_', $this->post_type);
     if( function_exists($function_name) ) {
       add_filter( 'rwmb_meta_boxes', 'meta_boxes_' . $this->post_type );
     }
