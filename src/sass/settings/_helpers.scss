@@ -1,0 +1,102 @@
+//--------
+//Text Align
+//--------
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-justify { text-align: justify !important; }
+.text-right { text-align: right !important; }
+
+//--------
+//Text Transform
+//--------
+.text-uppercase { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+.text-lowercase { text-transform: lowercase !important; }
+.text-none { text-transform: full-width !important; }
+
+//--------
+//Text underline
+//--------
+.text-unlerline { text-decoration: underline !important; }
+.text-unlerline-none { text-decoration: none !important; }
+
+//--------
+//Cut Text
+//--------
+.ellipsis-text { display: block; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+
+//--------
+//Float
+//--------
+.right { float: right; }
+.left { float: left; }
+.clear {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+//--------
+//Position
+//--------
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+
+//--------
+//Display
+//--------
+.block { display: block; }
+.inline-block { display: inline-block; }
+.inline { display: inline; }
+.hidden { display: none; }
+
+//--------
+//Overflow
+//--------
+.overflow-hidden { overflow: hidden; }
+.overflow-visible { overflow: visible; }
+.overflow-auto { overflow: auto; }
+
+//--------
+//Center
+//--------
+.block-center { display: block; margin: 0 auto; width: 50%; }
+
+//--------
+//Font Weight
+//--------
+.weight-bold { font-weight: $weight--bold; }
+.weight-normal { font-weight: $weight--normal; }
+.weight-lighter { font-weight: $weight--lighter; }
+.weight-thin {  font-weight: $weight--thin; }
+
+//--------
+//Font size
+//--------
+@include font-sizes-px-responsive('false', 8, 200);
+@include font-sizes-px-responsive('true', 8, 200);
+
+//--------
+//Background
+//--------
+.background-transparent { background-color: transparent; }
+.bg { background-position: center; background-size: cover; background-repeat: no-repeat; min-height: inherit; height: inherit; }
+
+//--------
+//Scroll horizontal display
+//--------
+.scroll-horizontal {
+  overflow-x: scroll;
+  white-space: nowrap;
+  >* {
+    display: inline-block;
+    float: none;
+  }
+}
+
+//--------
+//Colors
+//--------

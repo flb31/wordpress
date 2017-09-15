@@ -1,0 +1,28 @@
+body{
+  background: $base--lumen--green;
+  color: $white;
+  font-family: $font--title;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: anim 15s ease infinite;
+  flex-wrap: wrap;
+  @keyframes(anim) {
+    0% { background: $base--lumen--green; }
+    50% { background: $base--lumen--yellow; }
+    100% { background: $base--lumen--green; }
+  }
+
+  .hello {
+    align-self: center;
+
+    i.fa-code {
+      transition: transform 0.6s ease;
+
+      &:hover {
+        transform: rotateY(180deg);
+      }
+    }
+  } 
+}

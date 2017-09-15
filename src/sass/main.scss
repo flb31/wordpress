@@ -1,3 +1,21 @@
-body {
-  background-color: gray;
-}
+/// --------
+/// Dependences
+/// --------
+
+@import 'settings/conf';
+@import 'settings/normalize';
+@import 'settings/mixins';
+@import 'settings/mesaures';
+@import 'settings/grid';
+@import 'settings/fix-grid';
+@import 'settings/displays';
+@import 'settings/spaces';
+@import 'settings/helpers';
+@import 'common/button';
+@import 'common/font';
+@import 'common/form';
+@import 'common/svg';
+@import 'layout/general';
+@import 'layout/header';
+@import 'layout/content';
+@import 'layout/footer';

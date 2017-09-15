@@ -1,0 +1,14 @@
+/// --------
+/// Vendors
+/// --------
+
+//Dependences
+@import 'settings/conf';
+@import 'settings/paths';
+
+//Font Awesome
+$fa-font-path: '#{$path_bower_components}/components-font-awesome/fonts';
+@import url(#{$path_bower_components}/components-font-awesome/css/font-awesome.min.css);
+
+//Override Vendors
+@import 'common/override';
