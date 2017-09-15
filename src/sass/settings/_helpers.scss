@@ -98,5 +98,16 @@
 }
 
 //--------
+//Same height
+//--------
+&.column-same-height {
+  overflow: hidden;
+  > * {
+    margin-bottom: -99999px;
+    padding-bottom: 100009px;
+  }
+}
+
+//--------
 //Colors
 //--------
