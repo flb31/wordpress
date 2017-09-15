@@ -137,28 +137,24 @@
     return ( !isset($cat) ) ? FALSE : $cat->term_id;
   }
 
-  function LD_get_posts($post_type, $search, $page, $cat) {
-    $post_type = 'post';
-    $cat_id = get_cat($cat);
+  function LD_get_posts($post_type, $additional_arg = array(), $limit = FALSE, $search = '', $page = 0, $cat = 0) {
+    $post_type = ($post_type)? $post_type : 'post';
+    $cat_id = ($cat > 0) ? get_cat($cat) : FALSE;
+    $offset = (isset( $page ) && is_numeric($page) && $page > 0) ? $page * Conf::LIMIT_POSTS : $offset;
     
-    if(isset( $page ) && is_numeric($page) && $page > 0) {
-      $offset = $page * Conf::LIMIT_POSTS;
-    } else {
-      $offset = 0;
-    }
-
     $args = array(
       'cat' => $cat_id,
       'post_type' => $post_type,
       's' => $search,
-      'posts_per_page' => Conf::LIMIT_POSTS,
-      'order' => 'DESC',
+      'posts_per_page' => ($limit) ? $limit : Conf::LIMIT_POSTS,
       'offset' => $offset
     );
+    
+    $args = array_merge($args, $additional_arg);
 
     $posts = new WP_Query( $args );
     
-    return $posts;
+    return $posts->posts;
   }
 
   function LD_get_template_part($slug, $name = '', $data = FALSE) {
