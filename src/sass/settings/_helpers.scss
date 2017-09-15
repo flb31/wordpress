@@ -1,35 +1,64 @@
 //--------
 //Text Align
 //--------
-.text-center { text-align: center !important; }
-.text-left { text-align: left !important; }
-.text-justify { text-align: justify !important; }
-.text-right { text-align: right !important; }
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-justify {
+  text-align: justify !important;
+}
+.text-right {
+  text-align: right !important;
+}
 
 //--------
 //Text Transform
 //--------
-.text-uppercase { text-transform: uppercase !important; }
-.text-capitalize { text-transform: capitalize !important; }
-.text-lowercase { text-transform: lowercase !important; }
-.text-none { text-transform: none !important; }
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+.text-none {
+  text-transform: none !important;
+}
 
 //--------
 //Text underline
 //--------
-.text-unlerline { text-decoration: underline !important; }
-.text-unlerline-none { text-decoration: none !important; }
+.text-unlerline {
+  text-decoration: underline !important;
+}
+.text-unlerline-none {
+  text-decoration: none !important;
+}
 
 //--------
 //Cut Text
 //--------
-.ellipsis-text { display: block; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.ellipsis-text {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 
 //--------
 //Float
 //--------
-.right { float: right; }
-.left { float: left; }
+.right {
+  float: right !important;
+}
+.left {
+  float: left !important;
+}
 .clear {
   &:after {
     content: '';
@@ -41,37 +70,88 @@
 //--------
 //Position
 //--------
-.relative { position: relative; }
-.absolute { position: absolute; }
-.fixed { position: fixed; }
+.relative {
+  position: relative !important;
+}
+.absolute {
+  position: absolute !important;
+}
+.fixed {
+  position: fixed !important;
+}
+.static {
+  position: static!important;
+}
 
 //--------
 //Display
 //--------
-.block { display: block; }
-.inline-block { display: inline-block; }
-.inline { display: inline; }
-.hidden { display: none; }
+.block {
+  display: block !important;
+}
+.inline-block {
+  display: inline-block !important;
+}
+.inline {
+  display: inline !important;
+}
+.hidden {
+  display: none !important;
+}
 
 //--------
 //Overflow
 //--------
-.overflow-hidden { overflow: hidden; }
-.overflow-visible { overflow: visible; }
-.overflow-auto { overflow: auto; }
+.overflow-hidden {
+  overflow: hidden !important;
+}
+.overflow-visible {
+  overflow: visible !important;
+}
+.overflow-auto {
+  overflow: auto !important;
+}
 
 //--------
 //Center
 //--------
-.block-center { display: block; margin: 0 auto; width: 50%; }
+.block-center {
+  display: block !important;
+  margin: 0 auto !important;
+  width: 50% !important;
+  
+  &__20 {
+    width: 20% !important;
+  }
+  
+  &__40 {
+    width: 40% !important;
+  }
+  
+  &__60 {
+    width: 60% !important;
+  }
+  
+  &__80 {
+    width: 80% !important;
+  }
+}
 
 //--------
 //Font Weight
 //--------
-.weight-bold { font-weight: $weight--bold; }
-.weight-normal { font-weight: $weight--normal; }
-.weight-lighter { font-weight: $weight--lighter; }
-.weight-thin {  font-weight: $weight--thin; }
+.weight-bold {
+  font-weight: $weight--bold !important;
+}
+.weight-normal {
+  font-weight: $weight--normal !important;
+}
+.weight-lighter {
+  font-weight: $weight--lighter !important;
+}
+.weight-thin {
+  font-weight: $weight--thin !important;
+}
 
 //--------
 //Font size
@@ -82,8 +162,16 @@
 //--------
 //Background
 //--------
-.background-transparent { background-color: transparent; }
-.bg { background-position: center; background-size: cover; background-repeat: no-repeat; min-height: inherit; height: inherit; }
+.background-transparent {
+  background-color: transparent !important;
+}
+.bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: inherit;
+  height: inherit;
+}
 
 //--------
 //Scroll horizontal display
