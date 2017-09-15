@@ -152,9 +152,30 @@
     return $posts;
   }
 
-  function LD_get_template_part($data, $slug, $name) {
-    foreach($data as $key => $val) {
-      set_query_var( Conf::PREFIX . $key, $val );
-    }
+  function LD_get_template_part($slug, $name = '', $data = FALSE) {
+    process_set_var($data);
     get_template_part($slug, $name);
+  }
+
+  function process_set_var($data) {
+    if(is_array($data)) {
+      foreach($data as $key => $val) {
+        set_query_var( Conf::PREFIX . $key, $val );
+      }
+    }
+  }
+
+  function load_post_type() {
+    $types = Conf::$POST_TYPES;
+    foreach($types as $post_type => $item) {
+      new PostType($post_type, $item['taxonomy']);
+    }
+  }
+
+  function meta_opengraph() {
+    LD_get_template_part('partials/opengraph');
+  }
+
+  function meta_noindex() {
+    LD_get_template_part('partials/noindex');
   }

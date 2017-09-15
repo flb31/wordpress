@@ -9,11 +9,7 @@ include 'admin-login/login.php';
 include 'admin-colors/admin-colors.php';
 
 
-function load_post_type() {
-  $types = Conf::$POST_TYPES;
-  foreach($types as $post_type => $item) {
-    new PostType($post_type, $item['taxonomy']);
-  }
-}
-
+// Load actions
 add_action('init', 'load_post_type', 0);
+add_action( PREFIX . '_head', 'meta_opengraph' );
+add_action( PREFIX . '_head', 'meta_noindex' );
