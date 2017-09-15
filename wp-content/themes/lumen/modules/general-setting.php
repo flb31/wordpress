@@ -23,6 +23,7 @@ function front_setting_page(){
     array('name' => 'general_city', 'type' => 'text', 'title' => 'Ciudad'),
     array('name' => 'general_phone', 'type' => 'tel', 'title' => 'Teléfono'),
     array('name' => 'general_email', 'type' => 'email', 'title' => 'Correo'),
+    array('name' => 'fb_app_id', 'type' => 'text', 'title' => 'Facebook App ID'),
   ); 
   
   ?>

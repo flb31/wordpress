@@ -202,3 +202,25 @@
     
     process_set_var($data);
   }
+
+  function get_image_open_graph() {
+    
+    $images = rwmb_meta('post_image', 'type=image&size=post_opengrap', get_the_ID() );
+    $image_open_graph = '';
+    
+    if( is_array($images) ){ 
+      foreach($images as $image) { break; }
+      $image_open_graph = $image['url'];
+    }
+    
+    if(!$image_open_graph) { //Default image post
+      $image_post = get_the_post_thumbnail_url(get_the_ID(), 'post_opengrap');
+      $image_open_graph = $image_post;
+    }
+    
+    if(!$image_open_graph) {
+      $image_open_graph = Conf::default_image_opengraph();
+    }
+    
+    return $image_open_graph;
+  }

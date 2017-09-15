@@ -3,7 +3,6 @@
 class Conf {
   const TEXT_DOMAIN = 'lumen';
   const LIMIT_POSTS = 10;
-  const DEFAULT_OPENGRAPH = '';
   const PREFIX = 'LD';
   
   //Post type
@@ -21,4 +20,12 @@ class Conf {
         'text_domain' => self::TEXT_DOMAIN,
       ),
   );
+  
+  public static function default_image_opengraph() {
+    return self::custom_image(200, 200, '' );
+  }
+  
+  public static function custom_image($width, $height, $text ) {
+    return "https://placeholdit.imgix.net/~text?txtsize=33&txt={$text}&w={$width}&h={$height}&bg=cccccc&txtclr=ffffff";
+  }
 }
